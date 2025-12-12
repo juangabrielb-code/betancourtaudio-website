@@ -38,22 +38,22 @@
   --space-xl: 4rem;
   --space-2xl: 6rem;
 
-  /* === SEMÁNTICOS - MODO CLARO === */
-  --bg-primary: var(--stone-50);
-  --bg-secondary: var(--stone-100);
-  --text-primary: var(--stone-900);
-  --text-secondary: var(--stone-600);
-  --border: var(--stone-300);
+  /* === SEMÁNTICOS - MODO OSCURO (DEFAULT) === */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: var(--stone-800);
+  --text-primary: var(--stone-50);
+  --text-secondary: var(--stone-400);
+  --border: var(--stone-700);
 }
 
-/* === MODO OSCURO === */
-@media (prefers-color-scheme: dark) {
+/* === MODO CLARO === */
+@media (prefers-color-scheme: light) {
   :root {
-    --bg-primary: var(--stone-900);
-    --bg-secondary: var(--stone-800);
-    --text-primary: var(--stone-50);
-    --text-secondary: var(--stone-400);
-    --border: var(--stone-700);
+    --bg-primary: var(--stone-50);
+    --bg-secondary: var(--stone-100);
+    --text-primary: var(--stone-900);
+    --text-secondary: var(--stone-600);
+    --border: var(--stone-300);
   }
 }
 
