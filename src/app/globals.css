@@ -39,21 +39,15 @@
   --space-2xl: 6rem;
 
   /* === SEMÁNTICOS - MODO OSCURO (DEFAULT) === */
-  --bg-primary: #0a0a0a;
-  --bg-secondary: var(--stone-800);
-  --text-primary: var(--stone-50);
-  --text-secondary: var(--stone-400);
-  --border: var(--stone-700);
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 /* === MODO CLARO === */
 @media (prefers-color-scheme: light) {
   :root {
-    --bg-primary: var(--stone-50);
-    --bg-secondary: var(--stone-100);
-    --text-primary: var(--stone-900);
-    --text-secondary: var(--stone-600);
-    --border: var(--stone-300);
+    --background: #ffffff;
+    --foreground: #171717;
   }
 }
 
@@ -66,22 +60,30 @@
 
 body {
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--background);
+  color: var(--foreground);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   font-weight: 300;
 }
 
 /* === ANIMACIONES === */
 @keyframes breathe {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     opacity: 0.3;
   }
+
   50% {
     transform: scale(1.1);
     opacity: 0.5;

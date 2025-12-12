@@ -1,18 +1,15 @@
 {
-  "HomePage": {
-    "title": "Betancourt Audio",
-    "subtitle": "Servicios profesionales de audio y producción",
-    "ctaPrimary": "Contáctanos",
-    "ctaSecondary": "Nuestros Servicios"
-  },
-  "Hero": {
-    "brandName": "Betancourt",
-    "tagline": "Producción de Audio"
-  },
   "Navbar": {
     "home": "Inicio",
     "services": "Servicios",
     "portfolio": "Portafolio",
     "contact": "Contacto"
+  },
+  "Hero": {
+    "title": "Betancourt",
+    "subtitle": "Producción de Audio"
+  },
+  "HomePage": {
+    "title": "Betancourt Audio"
   }
 }

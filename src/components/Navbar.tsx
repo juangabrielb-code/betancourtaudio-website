@@ -5,7 +5,7 @@ import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const t = useTranslations('Navbar');
-  
+
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>

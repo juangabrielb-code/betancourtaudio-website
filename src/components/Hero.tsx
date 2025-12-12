@@ -5,7 +5,7 @@ import styles from './Hero.module.css';
 
 export default function Hero() {
   const t = useTranslations('Hero');
-  
+
   return (
     <section className={styles.hero}>
       {/* Animated gradient blobs */}
@@ -18,10 +18,10 @@ export default function Hero() {
       {/* Hero content */}
       <div className={styles.content}>
         <h1 className={styles.title}>
-          {t('brandName')}
+          {t('title')}
         </h1>
         <h2 className={styles.tagline}>
-          {t('tagline')}
+          {t('subtitle')}
         </h2>
       </div>
     </section>
