@@ -1,13 +1,20 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Syne, Space_Grotesk } from "next/font/google";
 import LocaleHtml from "@/components/LocaleHtml";
 import "../globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const syne = Syne({
   subsets: ["latin"],
+  variable: "--font-syne",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -28,7 +35,9 @@ export default async function LocaleLayout({
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
       <LocaleHtml locale={locale} />
-      <div className={`${inter.variable} antialiased`}>{children}</div>
+      <div className={`${syne.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
+        {children}
+      </div>
     </NextIntlClientProvider>
   );
 }
