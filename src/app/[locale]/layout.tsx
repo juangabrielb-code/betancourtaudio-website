@@ -1,21 +1,6 @@
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
-import { Syne, Space_Grotesk } from "next/font/google";
-import LocaleHtml from "@/components/LocaleHtml";
-import "../globals.css";
-
-const syne = Syne({
-  subsets: ["latin"],
-  variable: "--font-syne",
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Betancourt Audio",
@@ -24,20 +9,17 @@ export const metadata: Metadata = {
 
 export default async function LocaleLayout({
   children,
-  params,
+  params: { locale },
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
 }) {
-  const { locale } = await params;
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <LocaleHtml locale={locale} />
-      <div className={`${syne.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
-        {children}
-      </div>
+      {children}
     </NextIntlClientProvider>
   );
 }

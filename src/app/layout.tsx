@@ -1,15 +1,18 @@
 import { ReactNode } from 'react';
-import { Syne, Space_Grotesk } from 'next/font/google';
+import { Crimson_Pro, Work_Sans } from 'next/font/google';
+import './globals.css';
 
-const syne = Syne({
+const crimsonPro = Crimson_Pro({
   subsets: ['latin'],
-  variable: '--font-syne',
+  weight: ['300', '400', '600'],
+  variable: '--font-display',
   display: 'swap',
 });
 
-const spaceGrotesk = Space_Grotesk({
+const workSans = Work_Sans({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  weight: ['300', '400', '500'],
+  variable: '--font-body',
   display: 'swap',
 });
 
@@ -19,8 +22,8 @@ type Props = {
 
 export default function RootLayout({ children }: Props) {
   return (
-    <html className={`${syne.variable} ${spaceGrotesk.variable}`}>
-      <body className="bg-background text-foreground antialiased">{children}</body>
+    <html lang="es" className={`${crimsonPro.variable} ${workSans.variable}`}>
+      <body className="bg-background text-foreground antialiased font-sans">{children}</body>
     </html>
   );
 }
