@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de Layouts - Betancourt Audio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Work+Sans:wght@300;400;500&display=swap');
+
+        :root {
+            --stone-50: #fafaf9;
+            --stone-100: #f5f5f4;
+            --stone-200: #e7e5e4;
+            --stone-300: #d6d3d1;
+            --stone-400: #a8a29e;
+            --stone-500: #78716c;
+            --stone-600: #57534e;
+            --stone-700: #44403c;
+            --stone-800: #292524;
+            --stone-900: #1c1917;
+
+            --clay: #b8956a;
+            --wood: #8b6f47;
+
+            --font-display: 'Crimson Pro', serif;
+            --font-body: 'Work Sans', sans-serif;
+
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+            --space-2xl: 6rem;
+
+            --bg-primary: var(--stone-50);
+            --bg-secondary: var(--stone-100);
+            --text-primary: var(--stone-900);
+            --text-secondary: var(--stone-600);
+            --border: var(--stone-300);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: var(--stone-900);
+                --bg-secondary: var(--stone-800);
+                --text-primary: var(--stone-50);
+                --text-secondary: var(--stone-400);
+                --border: var(--stone-700);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-primary);
+            border-bottom: 1px solid var(--border);
+            padding: var(--space-md) var(--space-lg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 1.5rem;
+            color: var(--clay);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-lg);
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--clay);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--space-2xl) var(--space-lg);
+            min-height: 80vh;
+            gap: var(--space-lg);
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-weight: 300;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-weight: 400;
+            font-size: clamp(1.125rem, 2vw, 1.5rem);
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: var(--space-xl) var(--space-lg);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: var(--space-sm);
+        }
+
+        .section-description {
+            font-weight: 300;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Grid Layouts */
+        .grid-2-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .grid-3-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        @media (max-width: 768px) {
+
+            .grid-2-col,
+            .grid-3-col {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Card */
+        .card {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: var(--space-lg);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-title {
+            font-family: var(--font-display);
+            font-weight: 400;
+            font-size: 1.5rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .card-description {
+            font-weight: 300;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.875rem 2rem;
+            border-radius: 2px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--clay);
+            color: var(--stone-50);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--wood);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--clay);
+            color: var(--clay);
+        }
+
+        .button-group {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: var(--space-xl) var(--space-lg);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: var(--border);
+            margin: var(--space-xl) 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Betancourt Audio</div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-link">Inicio</a></li>
+            <li><a href="#" class="nav-link">Servicios</a></li>
+            <li><a href="#" class="nav-link">Portfolio</a></li>
+            <li><a href="#" class="nav-link">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1 class="hero-title">Audio de Alta Fidelidad</h1>
+        <p class="hero-subtitle">
+            Mezcla, masterización y post-producción profesional
+            para proyectos musicales y multimedia
+        </p>
+        <div class="button-group">
+            <a href="#" class="btn btn-primary">Iniciar Proyecto</a>
+            <a href="#" class="btn btn-secondary">Ver Portfolio</a>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Services Section -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Servicios</h2>
+            <p class="section-description">
+                Soluciones profesionales de audio adaptadas a las necesidades
+                específicas de cada proyecto
+            </p>
+        </div>
+
+        <div class="grid-3-col">
+            <article class="card">
+                <h3 class="card-title">Mezcla</h3>
+                <p class="card-description">
+                    Balance preciso de niveles, ecualización, compresión y
+                    efectos espaciales para una mezcla cohesiva.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3 class="card-title">Masterización</h3>
+                <p class="card-description">
+                    Optimización final con atención a dinámicas y preparación
+                    para todos los formatos de distribución.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3 class="card-title">Post-Producción</h3>
+                <p class="card-description">
+                    Edición, diseño de sonido y mezcla para podcasts,
+                    audiovisuales y contenido multimedia.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Two Column Layout Section -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Por Qué Elegirnos</h2>
+        </div>
+
+        <div class="grid-2-col">
+            <article class="card">
+                <h3 class="card-title">Experiencia Técnica</h3>
+                <p class="card-description">
+                    Más de 10 años trabajando con artistas y productores
+                    de diversos géneros musicales y proyectos multimedia.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3 class="card-title">Equipo Profesional</h3>
+                <p class="card-description">
+                    Studio equipado con hardware y software de última generación
+                    para garantizar resultados de calidad internacional.
+                </p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Betancourt Audio. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplos de Botones - Betancourt Audio</title>
+  <style>
+    /* Importar tipografías */
+    @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Work+Sans:wght@300;400;500&display=swap');
+
+    /* Variables del Sistema de Diseño */
+    :root {
+      /* Colores Neutros */
+      --stone-50: #fafaf9;
+      --stone-100: #f5f5f4;
+      --stone-200: #e7e5e4;
+      --stone-300: #d6d3d1;
+      --stone-400: #a8a29e;
+      --stone-500: #78716c;
+      --stone-600: #57534e;
+      --stone-700: #44403c;
+      --stone-800: #292524;
+      --stone-900: #1c1917;
+
+      /* Acentos */
+      --clay: #b8956a;
+      --wood: #8b6f47;
+      --linen: #f5ebe0;
+      --sage: #9caf88;
+
+      /* Tipografía */
+      --font-display: 'Crimson Pro', serif;
+      --font-body: 'Work Sans', sans-serif;
+
+      /* Espaciado */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2.5rem;
+      --space-xl: 4rem;
+      --space-2xl: 6rem;
+
+      /* Semánticos - Modo Claro */
+      --bg-primary: var(--stone-50);
+      --bg-secondary: var(--stone-100);
+      --text-primary: var(--stone-900);
+      --text-secondary: var(--stone-600);
+      --border: var(--stone-300);
+    }
+
+    /* Modo Oscuro */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-primary: var(--stone-900);
+        --bg-secondary: var(--stone-800);
+        --text-primary: var(--stone-50);
+        --text-secondary: var(--stone-400);
+        --border: var(--stone-700);
+      }
+    }
+
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      padding: var(--space-xl);
+    }
+
+    /* Componentes del Sistema */
+
+    /* Botón Base */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.875rem 2rem;
+      border-radius: 2px;
+      border: none;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    /* Botón Primario */
+    .btn-primary {
+      background-color: var(--clay);
+      color: var(--stone-50);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--wood);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(184, 149, 106, 0.3);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    /* Botón Secundario */
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--clay);
+      color: var(--clay);
+      transform: translateY(-2px);
+    }
+
+    /* Botón Ghost */
+    .btn-ghost {
+      background-color: transparent;
+      color: var(--text-secondary);
+      padding: 0.5rem 1rem;
+    }
+
+    .btn-ghost:hover {
+      color: var(--clay);
+      background-color: var(--bg-secondary);
+    }
+
+    /* Layout de Ejemplo */
+    .example-section {
+      margin-bottom: var(--space-xl);
+    }
+
+    .example-title {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: 2rem;
+      color: var(--text-primary);
+      margin-bottom: var(--space-md);
+    }
+
+    .button-group {
+      display: flex;
+      gap: var(--space-md);
+      flex-wrap: wrap;
+    }
+
+    .code-block {
+      background-color: var(--bg-secondary);
+      border: 1px solid var(--border);
+      padding: var(--space-md);
+      border-radius: 4px;
+      margin-top: var(--space-md);
+      font-family: 'Courier New', monospace;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1 class="example-title" style="font-size: 3rem; margin-bottom: var(--space-lg);">
+    Ejemplos de Botones
+  </h1>
+
+  <!-- Ejemplo 1: Botones Primarios -->
+  <section class="example-section">
+    <h2 class="example-title">Botones Primarios</h2>
+    <div class="button-group">
+      <button class="btn btn-primary">Iniciar Proyecto</button>
+      <button class="btn btn-primary">Contactar</button>
+      <button class="btn btn-primary">Descargar Portfolio</button>
+    </div>
+    <div class="code-block">
+&lt;button class="btn btn-primary"&gt;Iniciar Proyecto&lt;/button&gt;
+    </div>
+  </section>
+
+  <!-- Ejemplo 2: Botones Secundarios -->
+  <section class="example-section">
+    <h2 class="example-title">Botones Secundarios</h2>
+    <div class="button-group">
+      <button class="btn btn-secondary">Ver Más</button>
+      <button class="btn btn-secondary">Aprender Más</button>
+      <button class="btn btn-secondary">Explorar Servicios</button>
+    </div>
+    <div class="code-block">
+&lt;button class="btn btn-secondary"&gt;Ver Más&lt;/button&gt;
+    </div>
+  </section>
+
+  <!-- Ejemplo 3: Botones Ghost -->
+  <section class="example-section">
+    <h2 class="example-title">Botones Ghost</h2>
+    <div class="button-group">
+      <button class="btn btn-ghost">Inicio</button>
+      <button class="btn btn-ghost">Servicios</button>
+      <button class="btn btn-ghost">Portfolio</button>
+      <button class="btn btn-ghost">Contacto</button>
+    </div>
+    <div class="code-block">
+&lt;button class="btn btn-ghost"&gt;Inicio&lt;/button&gt;
+    </div>
+  </section>
+
+  <!-- Ejemplo 4: Combinaciones -->
+  <section class="example-section">
+    <h2 class="example-title">Combinaciones de Botones</h2>
+    <div class="button-group">
+      <button class="btn btn-primary">Aceptar</button>
+      <button class="btn btn-secondary">Cancelar</button>
+    </div>
+    <div class="code-block">
+&lt;!-- Patrón común: Acción primaria + secundaria --&gt;
+&lt;button class="btn btn-primary"&gt;Aceptar&lt;/button&gt;
+&lt;button class="btn btn-secondary"&gt;Cancelar&lt;/button&gt;
+    </div>
+  </section>
+
+  <!-- Ejemplo 5: Enlaces como Botones -->
+  <section class="example-section">
+    <h2 class="example-title">Enlaces como Botones</h2>
+    <div class="button-group">
+      <a href="#" class="btn btn-primary">Ir al Portfolio</a>
+      <a href="#" class="btn btn-secondary">Leer Blog</a>
+    </div>
+    <div class="code-block">
+&lt;a href="#portfolio" class="btn btn-primary"&gt;Ir al Portfolio&lt;/a&gt;
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,15 +1,15 @@
-// This is the new root layout: src/app/layout.tsx
-// It's a minimal layout that passes the `locale` param to the children.
 import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
-export default function RootLayout({ children, params }: Props) {
+export default async function RootLayout({ children, params }: Props) {
+  const { locale } = await params;
+  
   return (
-    <html lang={params.locale}>
+    <html lang={locale}>
       <body>{children}</body>
     </html>
   );

@@ -1,0 +1,72 @@
+/* ============================================
+   BUTTON COMPONENT - SISTEMA DE DISEÑO JAPANDI
+   ============================================ */
+
+/* Base Button */
+.btn {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Visual */
+  padding: 0.875rem 2rem;
+  border-radius: 2px;
+  border: none;
+  
+  /* Tipografía */
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  
+  /* Interacción */
+  transition: all 0.3s ease;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Variante Primaria */
+.primary {
+  background-color: var(--clay);
+  color: var(--stone-50);
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--wood);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 149, 106, 0.3);
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Variante Secundaria */
+.secondary {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+.secondary:hover:not(:disabled) {
+  border-color: var(--clay);
+  color: var(--clay);
+  transform: translateY(-2px);
+}
+
+/* Variante Ghost */
+.ghost {
+  background-color: transparent;
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+}
+
+.ghost:hover:not(:disabled) {
+  color: var(--clay);
+  background-color: var(--bg-secondary);
+}

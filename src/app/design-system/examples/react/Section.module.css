@@ -1,0 +1,44 @@
+/* ============================================
+   SECTION COMPONENT - SISTEMA DE DISEÑO JAPANDI
+   ============================================ */
+
+/* Section Base */
+.section {
+    /* Espaciado */
+    padding: var(--space-xl) var(--space-lg);
+
+    /* Layout */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* Variante Hero */
+.hero {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /* Espaciado */
+    padding: var(--space-2xl) var(--space-lg);
+    min-height: 80vh;
+    gap: var(--space-lg);
+
+    /* Sin max-width constraint para hero */
+    max-width: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section {
+        padding: var(--space-lg) var(--space-md);
+    }
+
+    .hero {
+        padding: var(--space-xl) var(--space-md);
+        min-height: 60vh;
+    }
+}
