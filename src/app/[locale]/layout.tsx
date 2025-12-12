@@ -26,7 +26,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <div className={`${inter.variable} antialiased`}>{children}</div>
     </NextIntlClientProvider>
   );
 }

@@ -1,30 +1,25 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
+import styles from './Navbar.module.css';
+
 export default function Navbar() {
+  const t = useTranslations('Navbar');
+  
   return (
-    <nav className="fixed top-6 left-1/2 z-50 -translate-x-1/2">
-      <div className="flex items-center gap-6 rounded-full bg-white/5 px-6 py-3 backdrop-blur-2xl border border-white/10 shadow-[inset_0_0_20px_rgba(255,255,255,0.05)]">
-        <a
-          href="#home"
-          className="text-sm font-light tracking-tight text-white transition-colors hover:text-zinc-400"
-        >
-          Home
+    <nav className={styles.navbar}>
+      <div className={styles.container}>
+        <a href="#home" className={styles.link}>
+          {t('home')}
         </a>
-        <a
-          href="#services"
-          className="text-sm font-light tracking-tight text-white transition-colors hover:text-zinc-400"
-        >
-          Services
+        <a href="#services" className={styles.link}>
+          {t('services')}
         </a>
-        <a
-          href="#portfolio"
-          className="text-sm font-light tracking-tight text-white transition-colors hover:text-zinc-400"
-        >
-          Portfolio
+        <a href="#portfolio" className={styles.link}>
+          {t('portfolio')}
         </a>
-        <a
-          href="#contact"
-          className="text-sm font-light tracking-tight text-white transition-colors hover:text-zinc-400"
-        >
-          Contact
+        <a href="#contact" className={styles.link}>
+          {t('contact')}
         </a>
       </div>
     </nav>

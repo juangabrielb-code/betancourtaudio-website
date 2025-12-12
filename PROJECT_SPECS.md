@@ -3,10 +3,10 @@
 ## 1. PROJECT IDENTITY
 - **Type:** Portfolio + E-commerce + Client Portal for Audio Services.
 - **Goal:** Professional image, automated file delivery, multilingual support.
-- **Tech Stack:** Next.js 14+ (App Router), TypeScript, Tailwind CSS.
-- **UI Components:** Shadcn/UI (based on Radix & Tailwind).
-- **Core Libs:** `next-intl` (i18n), `lucide-react` (icons), `zod` (validation).
-- **Backend/Services:** Supabase (DB/Auth), Stripe (Payments), Resend (Emails).
+- **Tech Stack:** Next.js 16 (App Router), TypeScript, Tailwind CSS v4.
+- **UI Components:** Custom components using CSS Variables (Japandi Design System).
+- **Core Libs:** `next-intl` (i18n) ✅.
+- **Backend/Services:** TBD - Supabase (DB/Auth), Stripe (Payments), Resend (Emails) - Not yet configured.
 
 ## 2. FILE STRUCTURE & I18N STRATEGY
 - **Root:** `src/app`
@@ -18,8 +18,9 @@
   - Atom design or Feature-based (e.g., `components/ui` for Shadcn, `components/player` for audio).
 
 ## 3. DESIGN SYSTEM
-- **Theme:** Dark mode default (Studio vibe).
-- **Font:** Geist Sans or Inter (Professional, clean).
+- **Theme:** Japandi Design System (Dark mode default, Studio vibe).
+- **Fonts:** Crimson Pro (display), Work Sans (body) - via Google Fonts.
+- **Implementation:** CSS Variables nativas (defined in `globals.css`).
 - **Responsive:** Mobile-first.
 
 ## 4. PHASE 1: FOUNDATION & LANDING (Current Focus)
@@ -31,7 +32,7 @@
    - Service Grid.
 
 ## 5. RULES FOR AI AGENTS
-- **Do NOT** use hardcoded text strings in components. Use `t('key')` hooks.
+- **Do NOT** use hardcoded text strings in components. Use `t('key')` hooks from `next-intl`.
 - **Do NOT** use `any` in TypeScript. Define interfaces in `src/types`.
-- **Style:** Use Tailwind utility classes. Do not create .css files unless for global animations.
+- **Style:** Use CSS Variables from the Japandi Design System (defined in `globals.css`). Prefer CSS Modules for component styles. Tailwind utilities are available but secondary to the design system.
 

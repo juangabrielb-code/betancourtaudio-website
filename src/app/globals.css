@@ -1,25 +1,89 @@
 @import "tailwindcss";
 
+/* ============================================
+   SISTEMA DE DISEÑO JAPANDI - BETANCOURT AUDIO
+   ============================================ */
+
+/* Importar tipografías de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Work+Sans:wght@300;400;500&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* === COLORES NEUTROS === */
+  --stone-50: #fafaf9;
+  --stone-100: #f5f5f4;
+  --stone-200: #e7e5e4;
+  --stone-300: #d6d3d1;
+  --stone-400: #a8a29e;
+  --stone-500: #78716c;
+  --stone-600: #57534e;
+  --stone-700: #44403c;
+  --stone-800: #292524;
+  --stone-900: #1c1917;
+
+  /* === ACENTOS (MARCA) === */
+  --clay: #b8956a;
+  --wood: #8b6f47;
+  --linen: #f5ebe0;
+  --sage: #9caf88;
+
+  /* === TIPOGRAFÍA === */
+  --font-display: 'Crimson Pro', serif;
+  --font-body: 'Work Sans', sans-serif;
+
+  /* === ESPACIADO === */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  /* === SEMÁNTICOS - MODO CLARO === */
+  --bg-primary: var(--stone-50);
+  --bg-secondary: var(--stone-100);
+  --text-primary: var(--stone-900);
+  --text-secondary: var(--stone-600);
+  --border: var(--stone-300);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-}
-
+/* === MODO OSCURO === */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-primary: var(--stone-900);
+    --bg-secondary: var(--stone-800);
+    --text-primary: var(--stone-50);
+    --text-secondary: var(--stone-400);
+    --border: var(--stone-700);
   }
 }
 
+/* === ESTILOS BASE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 300;
+}
+
+/* === ANIMACIONES === */
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
 }
