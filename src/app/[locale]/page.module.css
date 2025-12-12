@@ -1,0 +1,99 @@
+.page {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary);
+  font-family: var(--font-body);
+}
+
+.main {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 80rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl) var(--space-xl);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  max-width: 42rem;
+  font-family: var(--font-body);
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+.ctaContainer {
+  margin-top: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+@media (min-width: 640px) {
+  .ctaContainer {
+    flex-direction: row;
+  }
+}
+
+.ctaPrimary {
+  display: flex;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: var(--clay);
+  padding: 0 var(--space-xl);
+  color: var(--stone-50);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ctaPrimary:hover {
+  background-color: var(--wood);
+  transform: translateY(-1px);
+}
+
+.ctaSecondary {
+  display: flex;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  padding: 0 var(--space-xl);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 400;
+  transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ctaSecondary:hover {
+  border-color: transparent;
+  background-color: var(--bg-secondary);
+  transform: translateY(-1px);
+}
+
