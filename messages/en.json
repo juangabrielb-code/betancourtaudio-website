@@ -1,15 +1,5 @@
 {
-  "Navbar": {
-    "home": "Home",
-    "services": "Services",
-    "portfolio": "Portfolio",
-    "contact": "Contact"
-  },
-  "Hero": {
-    "title": "Betancourt",
-    "subtitle": "Audio Production"
-  },
-  "HomePage": {
-    "title": "Betancourt Audio"
-  }
+  "Navbar": { "home": "Home", "services": "Services", "portfolio": "Portfolio", "contact": "Contact" },
+  "Hero": { "title": "Betancourt", "subtitle": "Audio Production" },
+  "HomePage": { "title": "Betancourt Audio" }
 }

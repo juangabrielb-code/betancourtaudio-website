@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-/* ============================================
-   SISTEMA DE DISEÑO JAPANDI - BETANCOURT AUDIO
-   ============================================ */
-
 /* Importar tipografías de Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=Work+Sans:wght@300;400;500&display=swap');
 
@@ -41,6 +37,11 @@
   /* === SEMÁNTICOS - MODO OSCURO (DEFAULT) === */
   --background: #0a0a0a;
   --foreground: #ededed;
+  --bg-primary: #0a0a0a;
+  --bg-secondary: var(--stone-800);
+  --text-primary: var(--stone-50);
+  --text-secondary: var(--stone-400);
+  --border: var(--stone-700);
 }
 
 /* === MODO CLARO === */
@@ -48,6 +49,11 @@
   :root {
     --background: #ffffff;
     --foreground: #171717;
+    --bg-primary: var(--stone-50);
+    --bg-secondary: var(--stone-100);
+    --text-primary: var(--stone-900);
+    --text-secondary: var(--stone-600);
+    --border: var(--stone-300);
   }
 }
 
@@ -65,25 +71,17 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 300;
 }
 
 /* === ANIMACIONES === */
 @keyframes breathe {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: scale(1);
     opacity: 0.3;
   }
-
   50% {
     transform: scale(1.1);
     opacity: 0.5;

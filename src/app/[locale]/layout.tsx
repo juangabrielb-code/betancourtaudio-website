@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import LocaleHtml from "@/components/LocaleHtml";
 import "../globals.css";
 
 const inter = Inter({
@@ -26,6 +27,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
+      <LocaleHtml locale={locale} />
       <div className={`${inter.variable} antialiased`}>{children}</div>
     </NextIntlClientProvider>
   );

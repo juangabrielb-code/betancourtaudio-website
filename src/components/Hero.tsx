@@ -4,7 +4,7 @@ import { useTranslations } from 'next-intl';
 import styles from './Hero.module.css';
 
 export default function Hero() {
-  const t = useTranslations('Hero');
+  const t = useTranslations();
 
   return (
     <section className={styles.hero}>
@@ -18,13 +18,12 @@ export default function Hero() {
       {/* Hero content */}
       <div className={styles.content}>
         <h1 className={styles.title}>
-          {t('title')}
+          {t('Hero.title')}
         </h1>
         <h2 className={styles.tagline}>
-          {t('subtitle')}
+          {t('Hero.subtitle')}
         </h2>
       </div>
     </section>
   );
 }
-

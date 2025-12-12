@@ -1,15 +1,12 @@
 import { ReactNode } from 'react';
-import { getLocale } from 'next-intl/server';
 
 type Props = {
   children: ReactNode;
 };
 
-export default async function RootLayout({ children }: Props) {
-  const locale = await getLocale();
-  
+export default function RootLayout({ children }: Props) {
   return (
-    <html lang={locale}>
+    <html>
       <body>{children}</body>
     </html>
   );
