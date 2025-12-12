@@ -1,5 +1,32 @@
 {
-  "Navbar": { "home": "Inicio", "services": "Servicios", "portfolio": "Portafolio", "contact": "Contacto" },
-  "Hero": { "title": "Betancourt", "subtitle": "Producción de Audio" },
-  "HomePage": { "title": "Betancourt Audio" }
+  "Navbar": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  },
+  "Hero": {
+    "title": "Betancourt",
+    "subtitle": "Producción de Audio"
+  },
+  "HomePage": {
+    "title": "Betancourt Audio"
+  },
+  "Services": {
+    "title": "Nuestros Servicios",
+    "items": {
+      "mixing": {
+        "title": "Mezcla",
+        "description": "Balance profesional, claridad y profundidad para tus pistas."
+      },
+      "mastering": {
+        "title": "Masterización",
+        "description": "Estándar de la industria en volumen y pulido para lanzamiento."
+      },
+      "production": {
+        "title": "Producción",
+        "description": "Creación completa de beats y asistencia en arreglos."
+      }
+    }
+  }
 }
