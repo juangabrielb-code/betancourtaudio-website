@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import Image from 'next/image';
 import styles from './Card.module.css';
 
 interface CardProps {
@@ -46,10 +47,12 @@ export function Card({ children, className = '' }: CardProps) {
 // Subcomponentes usando patrón de composición
 Card.Image = function CardImage({ src, alt }: CardImageProps) {
     return (
-        <img
+        <Image
             src={src}
             alt={alt}
             className={styles.cardImage}
+            width={400}
+            height={300}
         />
     );
 };
