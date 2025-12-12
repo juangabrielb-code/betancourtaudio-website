@@ -1,0 +1,36 @@
+# ================================
+# Docker Compose - Betancourt Audio
+# Configuración para desarrollo
+# ================================
+
+services:
+  # Next.js Development Server
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: betancourt-audio-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      # Sincronizar código fuente (hot reload)
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./messages:/app/messages
+
+      # Archivos de configuración
+      - ./next.config.ts:/app/next.config.ts
+      - ./tsconfig.json:/app/tsconfig.json
+      - ./tailwind.config.ts:/app/tailwind.config.ts
+
+      # Preservar node_modules
+      - node_modules:/app/node_modules
+    environment:
+      - NODE_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
+    command: npm run dev
+    stdin_open: true
+    tty: true
+
+volumes:
+  node_modules:
