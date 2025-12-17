@@ -1,34 +1,40 @@
+import NavbarNew from '@/components/home/NavbarNew';
 import Hero from '@/components/home/Hero';
 import BentoServices from '@/components/home/BentoServices';
+import PortfolioShowcase from '@/components/home/PortfolioShowcase';
+import SocialProof from '@/components/home/SocialProof';
+import BlogPreview from '@/components/home/BlogPreview';
+import NewsletterSection from '@/components/home/NewsletterSection';
+import Footer from '@/components/home/Footer';
 
 export default function HomePage() {
   return (
-    <main className="bg-background min-h-screen selection:bg-clay selection:text-white">
-      {/* 1. Área de Impacto Visual */}
-      <Hero />
+    <>
+      {/* Navigation Bar */}
+      <NavbarNew />
 
-      {/* 2. Servicios y Navegación Principal */}
-      <BentoServices />
+      <main className="bg-background min-h-screen selection:bg-clay selection:text-white pt-20">
+        {/* 1. Hero Section */}
+        <Hero />
 
-      {/* 3. Footer CTA Simple */}
-      <section className="py-24 px-4 text-center border-t border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/30">
-        <div className="max-w-2xl mx-auto space-y-6">
-          <h2 className="font-display text-4xl md:text-5xl text-foreground">
-            ¿Listo para sonar increíble?
-          </h2>
-          <p className="text-stone-500 font-body text-lg">
-            Hablemos de tu próximo proyecto. La primera consulta es gratuita.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-            <button className="px-8 py-4 bg-foreground text-background rounded-full font-medium hover:bg-stone-800 dark:hover:bg-stone-200 transition-colors shadow-lg">
-              Contactar Ahora
-            </button>
-            <button className="px-8 py-4 border border-stone-300 dark:border-stone-700 rounded-full font-medium hover:border-clay hover:text-clay transition-colors bg-background">
-              Suscribir al Newsletter
-            </button>
-          </div>
-        </div>
-      </section>
-    </main>
+        {/* 2. Bento Services Grid */}
+        <BentoServices />
+
+        {/* 3. Portfolio Showcase */}
+        <PortfolioShowcase />
+
+        {/* 4. Social Proof */}
+        <SocialProof />
+
+        {/* 5. Blog Preview */}
+        <BlogPreview />
+
+        {/* 6. Newsletter + Social Media */}
+        <NewsletterSection />
+      </main>
+
+      {/* 7. Footer */}
+      <Footer />
+    </>
   );
 }
