@@ -7,19 +7,18 @@ export const metadata: Metadata = {
   description: "Professional audio services and production",
 };
 
-export default async function LocaleLayout({
-  children,
-  params: { locale },
-}: {
+export default async function LocaleLayout(props: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const params = await props.params;
+  const locale = params.locale;
   setRequestLocale(locale);
   const messages = await getMessages();
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      {children}
+      {props.children}
     </NextIntlClientProvider>
   );
 }

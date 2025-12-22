@@ -36,7 +36,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
+Abrir [http://localhost:3001](http://localhost:3001) en el navegador.
 
 ### Opción 2: Desarrollo con Docker
 
@@ -52,7 +52,7 @@ docker-compose up
 docker-compose up -d
 ```
 
-Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
+Abrir [http://localhost:3001](http://localhost:3001) en el navegador.
 
 ---
 
